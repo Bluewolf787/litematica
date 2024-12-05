@@ -10,14 +10,16 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.render.*;
+import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.render.block.FluidRenderer;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.client.render.model.BakedQuad;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.fluid.FluidState;
-import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.util.crash.CrashException;
 import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.crash.CrashReportSection;
@@ -482,9 +484,11 @@ public class BlockModelRendererSchematic
         float green = (float) (i >> 8 & 0xFF) / 255.0f;
         float blue = (float) (i & 0xFF) / 255.0f;
 
+        /*
         renderEntity(consumer.getBuffer(RenderLayers.getEntityBlockLayer(stateIn)), matrixStack, stateIn, bakedModel, red, green, blue, light, overlay);
         this.bakedManager.getBlockEntityModelsSupplier().get()
                     .render(stateIn.getBlock(), ModelTransformationMode.NONE, matrixStack, consumer, light, overlay);
+         */
 
         return true;
     }
